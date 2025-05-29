@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Image Gallery</h1>
+    <div class="container">
+        <div class="image-container">
+            <div class="image"><img src="bstseller_1.png"></div>
+            <div class="image"><img src="bstseller_3.png"></div>
+            <div class="image"><img src="download2.jpeg"></div>
+            <div class="image"><img src="image3.png"></div>
+            <div class="image"> <img src="download1.jpeg"></div>
+            <div class="image"><img src="bstseller_4.png"></div>
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="bstseller_1.png">
+            
+
+        </div>
+
+    </div>
+    <script>
+        document.querySelectorAll(".image-container img").forEach(image => {
+            image.onclick = () =>{
+                document.querySelector(".popup-image").style.display="block";
+                document.querySelector(".popup-image img").src =image.getAttribute('src');
+            } 
+            
+           
+        });
+        document.querySelector(".popup-image span").onclick = () => {
+            document.querySelector(".popup-image").style.display="none";
+
+        }
+    </script>
+
+</body>
+
+</html>
